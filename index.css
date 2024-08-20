@@ -1,0 +1,466 @@
+*{
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    /* default style remove */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #ffffffff;
+    /* default case web scroll na ho */
+    overflow: hidden;
+}
+body{
+    padding: 10px;
+    background-color: #000;
+    color: white;
+}
+
+.main{
+    display: flex;
+      /* adopt screen height for hte diffrent device */
+      height: 100vh;
+      width: 100vw;
+      /* flex-wrap: wrap; */
+    /* border: 2px solid red; */
+  
+}
+
+
+/* +++++++++++++ sideBar++++++++++ */
+
+
+.sideBar{
+    width: 25%;
+    height: 100%;
+    background-color: #000;
+    /* border: 2px solid white; */
+    margin-right: 0.5rem;
+}
+.navContent{
+    width: 100%;
+    border-radius: 1rem;
+   /* border: 2px solid red; */
+    padding: 10px;
+    /* margin:  0px auto; */
+    background-color: #1E1E1E;
+}
+ .navOption{
+    margin-bottom: 0.5rem;
+    opacity: 0.7; 
+    padding-left: 1rem;
+ }
+ .navOption:hover{
+    opacity:1;
+ }
+ .navOption i{
+   font-size: 1.2rem; 
+   
+ }
+ .navOption a{
+    text-decoration: none;
+    font-size: 1rem;
+    margin-left: 1rem;
+ }
+
+ .options img{
+    width: 1rem;
+    height: auto;
+ }
+.library{
+    /* border: 2px solid lightcoral; */
+    border-radius: 2rem;
+    background-color: #1E1E1E;
+    padding-top: 0.3rem;
+    width: 100%;
+    height: 100%;
+    margin-top: 1rem;
+    /* border: 2px solid red; */
+}
+
+/* for the small screen  */
+.smalLib {
+    /* in default (screen larger tha the 900px) case display is none  */
+    /* display: none; */
+    width: 100%;
+    height: 20rem;
+    padding: 1rem;
+    /* border: 2px solid white; */
+    display: none;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid red; */
+}
+
+
+.smalLib img {
+    width: 50px;
+    height: 50px;
+    /* border: 2px solid red; */
+    margin-bottom: 1rem; /* Optional: adds space between images */
+    border-radius: 1rem;
+}
+.smalLib img:hover{
+  transform: translateY(-1px);
+  transition: all 0.3s ease ;
+ 
+
+}
+
+ .libOption{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 0.5rem;
+    /* border: 2px solid red; */
+    padding: .3rem 0.5rem;
+    /* background-color: #2f2e2e; */
+ }
+ .libOption a{
+ text-decoration: none;
+ }
+ .box{
+    width: 100%;
+    height: auto;
+    /* border: 2px solid black; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: #393939;
+    margin-bottom: 1rem;
+    /* border: 2px solid red; */
+ }
+ .box button{
+    color: black;
+    border-radius: 1rem;
+    border: none;
+    font-size: 20px;
+    padding: 0.1rem 0.2rem;
+ }
+
+
+/* to make responsive to the smallLib & box */
+@media screen and (max-width:900px){
+    .smalLib{
+        display:flex;
+    }
+    .box{
+        display: none;
+        
+    }
+    .libOption{
+        display: none;
+    }
+    .navOption{
+        /* border: 2px solid red; */
+        display: flex;
+        justify-content: center;
+    }
+    .navOption a{
+        display: none;
+    }
+    .navOption i{
+        /* border: 2px solid red; */
+        font-size: 3rem;
+    }
+}
+
+
+
+.contentSection{
+    width: 75%;
+    /* border: 2px solid green; */
+    overflow: auto;
+}
+.mainContent {
+    background-color: #121212; /* Temporarily change to white */
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    overflow-wrap: break-word;
+    padding: 0rem 1rem;
+  
+}
+
+
+.stickyNav{
+    width: 100%;
+    height: 4rem;
+    background-color: rgb(51, 53, 53);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 0px 2rem; */
+    position: sticky;
+    top: 0px;
+    left: 0px;
+    /* to show top of the page */
+    z-index: 10;
+}
+.stickyNav .leftPart{
+    display: flex;
+    justify-content: space-evenly;
+    /* border: 2px solid red; */
+    width: 30%;
+}
+.stickyNav .rightPart{
+    display: flex;
+    /* border: 2px solid black; */
+    margin-right: 0.5rem;
+    width: 48%;
+    justify-content: space-around;
+}
+.stickyNav button{
+    /* border: 2px solid red; */
+    background-color: white;
+    color: black;
+    border-radius:1rem;
+padding: 0.5rem 1rem;
+    border: none;
+}
+.stickyNav img{
+    color: white;
+    /* border: 2px solid red; */
+}
+
+
+/* add media query for the responsive ness */
+
+
+@media screen and (max-width:950px){
+    .stickyNav button{
+        display: none;
+    }
+    .stickyNav .rightangl{
+        display: none;
+    }
+}
+
+/* cart container designing */
+
+.cartContainer{
+    display: flex;
+     justify-content: left; 
+    /* align-items: center; */
+    /* default case me no wrap */
+     /* flex-wrap: wrap;  */
+     width: 100%;
+   
+}
+
+/* Default Cart Styling */
+.cart{
+    background-color: #232323;
+    width: 150px;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 0.2rem;
+}
+
+.cart img{
+    width: 100%;
+    border-radius: 1rem;
+}
+
+.cart .information{
+    opacity: 0.7;
+    font-size: 0.8rem;
+}
+
+.cart:hover{
+    transform: translateY(-1px);
+    box-shadow: 0px 0px 2px 0px rgb(255, 255, 255);
+    transition: all 0.2s ease;
+}
+
+/* Large screens (desktops, laptops) */
+@media screen and (max-width: 1195px) {
+    .cartContainer{
+        flex-wrap: wrap;
+    }
+    .cart {
+        width: 23%;
+    }
+}
+
+/* Medium screens (small laptops, large tablets) */
+@media screen and (max-width: 890px) {
+    .cartContainer{
+        flex-wrap: wrap;
+    }
+    .cart {
+        width: 30%;
+    }
+}
+
+/* Small screens (tablets) */
+@media screen and (max-width: 700px) {
+    .cartContainer{
+        flex-wrap: wrap;
+    }
+    .cart {
+        width: 45%;
+    }
+}
+
+
+
+/* footer */
+
+.footer{
+    height: auto;
+    width: 100%;
+    margin: 0px auto;
+    /* background-color: aqua; */
+    /* border: 2px solid rgb(89, 0, 255); */
+    display: flex;
+    align-items:baseline;
+    justify-content: center;
+    /* default case me no wrap  */
+    /* flex-wrap: wrap; */
+    /* border: 2px solid red; */
+}
+.borderfoot{
+    border: 0.09px solid white;
+    width: 100%;
+    opacity: 0.3;
+    
+}
+/* default case  */
+ .listItem ul{
+    list-style: none;
+    font-size: 0.8rem;
+ }
+.listItem{
+    width: 23%;
+    margin: 0.5rem;
+    
+}
+@media screen and (max-width:900px){
+    .listItem{
+        width: 45%;
+    }
+    /* screen width goes down  item ko next line me move karo */
+    .footer{
+        flex-wrap: wrap;
+    }
+}
+.firstLit{
+     font-size: 20px;
+    /* border: 2px solid red; */
+    padding: 0.5rem 0rem;
+    opacity: 1;
+    font-weight: 300;
+    text-align: left;
+}
+.commonCh{
+    opacity: 0.5;
+}
+
+.socilaIcon{
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+}
+.socilaIcon div{
+    border-radius: 50%;
+}
+.socilaIcon a{
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    /* padding: 0.5rem;  */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; 
+    background-color: #232323;
+    font-size: 23px;
+    text-decoration: none;
+    
+}
+.socilaIcon a:hover {
+    box-shadow: 0px 0px 5px 2px white;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.texInfo{
+    /* border: 2px solid red; */
+    width: 100%;
+    height: 4rem;
+    line-height: 2rem;
+ 
+
+}
+
+
+.musicPlayer{
+    background-color: #000000;
+    width: 100%;
+    height: 10%;
+    position: fixed;
+    bottom: 0px ;
+    left: 0px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    /* border: 2px solid red; */
+}
+
+.albm{
+    width: 25%;
+    height: 100%; 
+    /* border: 2px solid red;  */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.albm img{
+    /* border: 2px solid white; */
+    border-radius: 50%;
+
+}
+.titleSongs{
+    opacity: 0.4;
+}
+.progressBar{
+    width: 45%;
+   height: 100%;
+   /* border: 2px solid red; */
+  padding-top: 1rem;
+}
+.progressBar img{
+    width: 20px;
+    height:20px;
+}
+.musicIcon{
+  
+    height:50%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.seekBar{
+    /* border: 2px solid blueviolet; */
+    height: 50%;
+}
+.inputRange{
+    width: 60%;
+    /* border: 2px solid red; */
+}
+/* control pannel */
+
+.control{
+    width: 23%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
